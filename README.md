@@ -119,6 +119,57 @@ FAQ 資料儲存在 `faq.json` 中，包含多筆常見問答。主系統透過 
 
 ---
 
+# 更新
+
+## ☁️ Render 部署說明
+後來希望讓 LINE Bot 持續運作，而無需每次手動啟動 Flask 應用程式與 ngrok，所以將專案部署至 Render 平台。
+Render 提供免費的 Web Service 部署方案，適合開發與測試用途。
+
+## 🔧 部署步驟
+
+#### 1. 將專案上傳至 GitHub
+
+#### 2. 確保您的專案已推送至 GitHub，並且 .env 檔案已加入 .gitignore，避免洩漏敏感資訊。
+
+#### 3. 建立 Render Web Service
+
+#### 4. 登入 Render 並建立新的 Web Service。
+
+#### 5. 連接您的 GitHub 儲存庫。
+
+#### 6. 設定以下參數：
+    ```bash
+    Build Command: pip install -r requirements.txt
+    Start Command: gunicorn final_app:app
+    Environment: 選擇 Python 3
+    ```
+
+#### 7. 設定環境變數
+
+> 在 Render 的服務設定中，點選左側的「Environment」。
+
+> 新增以下環境變數：
+    ```bash
+    LINE_CHANNEL_ACCESS_TOKEN: 您的 LINE Channel Access Token
+
+    LINE_CHANNEL_SECRET: 您的 LINE Channel Secret
+
+    GEMINI_API_KEY: 您的 Gemini API 金鑰
+    ```
+
+#### 8. 設定 Webhook URL
+> 部署完成後，Render 會提供一個公開的網址，例如：
+    ```bash
+    https://your-app-name.onrender.com
+    ```
+> 前往 LINE Developers 平台，進入您的 Messaging API 頻道設定頁面。
+
+> 在「Webhook URL」欄位填入：
+    ```bash
+    https://your-app-name.onrender.com/callback
+    ```
+---
+
 ## 🔗 參考來源
 
 - OXXO Studio LINE 教學：[LINE Bot 基礎教學](https://steam.oxxostudio.tw/category/python/example/line-developer.html)

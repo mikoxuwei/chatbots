@@ -9,7 +9,9 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 
 # === 初始化環境與 LINE 設定 ===
-load_dotenv()
+# load_dotenv()
+# 載入 .env 檔案
+load_dotenv('/etc/secrets/.env')
 app = Flask(__name__)
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
