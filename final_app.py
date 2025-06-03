@@ -19,7 +19,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model_gemini = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 # === FAQ 載入 ===
-with open("faq2.json", "r", encoding="utf-8") as f:
+with open("faq.json", "r", encoding="utf-8") as f:
     faq_data = json.load(f)["faq"]
 
 # === 使用者對話記憶管理 ===

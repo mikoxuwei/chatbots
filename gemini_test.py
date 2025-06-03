@@ -10,7 +10,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model_gemini = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
 # === FAQ 載入 ===
-with open("faq2.json", "r", encoding="utf-8") as f:
+with open("faq.json", "r", encoding="utf-8") as f:
     faq_data = json.load(f)["faq"]
 
 # === 初始化對話歷史 ===
@@ -33,7 +33,7 @@ def get_semantic_faq_or_reply(user_input, history=None, max_history_turns=3):
         prompt = f"""
             你是「毛起來找家」的專業客服人員，請依照以下 FAQ 判斷是否可以直接回答使用者問題。
 
-            若找到最接近的 FAQ 問題，就直接在結尾括號回覆該問題的對應答案（A#），不需要說明來自 FAQ。
+            若找到最接近的 FAQ 問題，根據判斷請盡量提及FAQ中的內容，直接在結尾括號回覆該問題的對應答案（A#），不需要說明來自 FAQ。
             若 FAQ 無法涵蓋，請根據下方限制條件，自行以繁體中文生成簡潔、溫暖且具體的回覆。
             如果這是持續性的對話，請避免每次回覆都從「您好」開始，改以自然的語氣延續上一輪回應，
             例如「好的，針對您剛剛提到的…」、「如果您考慮退養的話，可以參考以下建議」等方式，使回覆更符合人類對話習慣。
