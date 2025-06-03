@@ -56,7 +56,7 @@ python final_app.py
 ```
 
 #### ✅ 使用 ngrok 建立公開網址並串接 LINE Webhook
- 當你在本地端執行 Flask 應用程式時（預設監聽 http://localhost:5000），LINE 是無法直接連線到你電腦的。這時可以使用 ngrok 將你的本地伺服器「公開（Expose）」到網際網路。
+ 當你在本地端執行 Flask 應用程式時（預設監聽 `http://localhost:5000`），LINE 是無法直接連線到你電腦的。這時可以使用 ngrok 將你的本地伺服器「公開（Expose）」到網際網路。
 
 步驟 1：執行 ngrok
 ```bash
