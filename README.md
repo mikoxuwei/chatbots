@@ -52,7 +52,7 @@ GEMINI_API_KEY=your_gemini_api_key
 #### ✅ 啟動主系統（整合 Gemini + LINE Bot + FAQ）
 
 ```bash
-python final_linebot.py
+python final_app.py
 ```
 
 #### ✅ 使用 ngrok 曝露 webhook
@@ -64,7 +64,7 @@ ngrok http 5000
 #### ✅ Gemini 本地測試（整合 FAQ 語意比對 + Gemini 回覆）
 
 ```bash
-python test_faq_memory2.py
+python gemini_test.py
 ```
 
 - 可支援上下文記憶對話。
@@ -87,10 +87,9 @@ FAQ 資料儲存在 `faq.json` 中，包含多筆常見問答。主系統透過 
 
 | 檔案名稱           | 說明 |
 |--------------------|------|
-| `final_linebot.py` | 主系統入口，整合 LINE webhook + FAQ 判斷 + Gemini 回覆 |
-| `test_faq_memory2.py` | 本地測試 FAQ + Gemini 回覆（支援上下文記憶） |
+| `final_app.py` | 主系統入口，整合 LINE webhook + FAQ 判斷 + Gemini 回覆 |
+| `gemini_test.py` | 本地測試 FAQ + Gemini 回覆（支援上下文記憶） |
 | `faq.json`         | 常見問答集，會被 Gemini 引用於比對與回覆 |
-| `gemini_api.py`    | Gemini 語意產生器備用模組 |
 | `.env.example`     | 環境變數模板 |
 | `requirements.txt` | 套件需求列表 |
 
