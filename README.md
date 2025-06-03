@@ -78,7 +78,7 @@ https://abc123.ngrok.io # 這個網址就是你本機的公開入口
     ```bash
     https://abc123.ngrok.io/callback
     ```
-> [!注意]
+> [!NOTE]
 > /callback 是你的 Flask app 中對應的接收路徑，請確認與程式碼一致。
 
 步驟 3：測試 Bot 是否連接成功
