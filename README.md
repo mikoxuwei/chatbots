@@ -55,11 +55,35 @@ GEMINI_API_KEY=your_gemini_api_key
 python final_app.py
 ```
 
-#### ✅ 使用 ngrok 曝露 webhook
+#### ✅ 使用 ngrok 建立公開網址並串接 LINE Webhook
+ 當你在本地端執行 Flask 應用程式時（預設監聽 http://localhost:5000），LINE 是無法直接連線到你電腦的。這時可以使用 ngrok 將你的本地伺服器「公開（Expose）」到網際網路。
 
+步驟 1：執行 ngrok
 ```bash
 ngrok http 5000
 ```
+執行後，會顯示一個網址，像這樣：
+```bash
+https://abc123.ngrok.io # 這個網址就是你本機的公開入口
+```
+步驟 2：填入 LINE Developers 的 Webhook URL
+    
+1. 前往 LINE Developers 官方網站
+
+2. 登入後，進入你的 Messaging API channel
+
+3. 點選左側的「Messaging API」
+
+4. 找到「Webhook URL」欄位，填入：
+    ```bash
+    https://abc123.ngrok.io/callback
+    ```
+> [!NOTE]
+> /callback 是你的 Flask app 中對應的接收路徑，請確認與程式碼一致。
+
+步驟 3：測試 Bot 是否連接成功
+
+- 在手機上加入你的 LINE 官方帳號，並發送訊息。若一切設定正確，你的本地應用程式應會在終端機中顯示收到的 webhook 內容，且會由 Gemini + FAQ 回覆你訊息 🎉
 
 #### ✅ Gemini 本地測試（整合 FAQ 語意比對 + Gemini 回覆）
 
