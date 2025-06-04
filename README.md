@@ -163,15 +163,11 @@ Render 提供免費的 Web Service 部署方案，適合開發與測試用途。
 
 #### 8. 設定 Webhook URL
 > 部署完成後，Render 會提供一個公開的網址，例如：
-    ```bash
-    https://your-app-name.onrender.com
-    ```
+    `https://your-app-name.onrender.com`
 > 前往 LINE Developers 平台，進入您的 Messaging API 頻道設定頁面。
 
 > 在「Webhook URL」欄位填入：
-    ```bash
-    https://your-app-name.onrender.com/callback
-    ```
+    `https://your-app-name.onrender.com/callback`
 ---
 
 ## 🔗 參考來源
