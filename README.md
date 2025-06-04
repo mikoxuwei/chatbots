@@ -138,11 +138,14 @@ Render 提供免費的 Web Service 部署方案，適合開發與測試用途。
 #### 5. 連接您的 GitHub 儲存庫。
 
 #### 6. 設定以下參數：
-    ```bash
+
+``` bash
     Build Command: pip install -r requirements.txt
+
     Start Command: gunicorn final_app:app
+
     Environment: 選擇 Python 3
-    ```
+```
 
 #### 7. 設定環境變數
 
@@ -150,13 +153,13 @@ Render 提供免費的 Web Service 部署方案，適合開發與測試用途。
 
 > 新增以下環境變數：
 
-    ```bash
+``` bash
     LINE_CHANNEL_ACCESS_TOKEN: 您的 LINE Channel Access Token
 
     LINE_CHANNEL_SECRET: 您的 LINE Channel Secret
 
     GEMINI_API_KEY: 您的 Gemini API 金鑰
-    ```
+```
 
 #### 8. 設定 Webhook URL
 > 部署完成後，Render 會提供一個公開的網址，例如：
