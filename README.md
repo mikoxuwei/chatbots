@@ -149,6 +149,7 @@ Render 提供免費的 Web Service 部署方案，適合開發與測試用途。
 > 在 Render 的服務設定中，點選左側的「Environment」。
 
 > 新增以下環境變數：
+
     ```bash
     LINE_CHANNEL_ACCESS_TOKEN: 您的 LINE Channel Access Token
 
